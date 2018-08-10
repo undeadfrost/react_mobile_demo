@@ -1,0 +1,66 @@
+.entrance {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20%;
+    max-width: 20vw;
+    margin-top: 3vw;
+    .circle {
+      width: 15vw;
+      height: 15vw;
+      border-radius: 100%;
+      background: #f3f3f3;
+    }
+    .desc {
+      margin-top: 2vw;
+      width: 10vw;
+      height: 2.5vw;
+      background: #f3f3f3;
+    }
+  }
+}
+
+.row {
+  display: flex;
+  padding: 4vw 3vw;
+  .left {
+    width: 20vw;
+    height: 20vw;
+    background: #f3f3f3;
+  }
+  .right {
+    width: 70vw;
+    .desc {
+      height: 2.5vw;
+      background: linear-gradient(90deg, #f3f3f3 8%, #eee 18%, #f3f3f3 33%);
+      margin: 2vw;
+      animation: progress 2s linear infinite;
+    }
+    .desc:nth-child(1) {
+      width: 100%;
+    }
+    .desc:nth-child(2) {
+      width: 90%;
+    }
+    .desc:nth-child(3) {
+      width: 80%;
+    }
+    .desc:nth-child(4) {
+      width: 90%;
+    }
+  }
+}
+
+@keyframes progress {
+  from {
+    background-position: -400px 0;
+  }
+  to {
+    background-position: 400px 0;
+  }
+}

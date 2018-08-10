@@ -144,3 +144,7 @@ body {
     font-weight: 200;
     font-family: 'PingFang SC', 'STHeitiSC-Light', 'Arial, Helvetica, sans-serif';
 }
+
+img {
+    content: normal !important;
+}
