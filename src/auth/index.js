@@ -1,12 +1,24 @@
 import React, {Component} from 'react'
 import {Route, Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
 
+const mapStateToProps = (state) => {
+	return {
+		userData: state.userData
+	}
+}
 
 class PrivateRoute extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
 			isAuthenticated: false,
+		}
+	}
+	
+	componentWillMount() {
+		if (this.props.userData.isLogin) {
+			this.setState({isAuthenticated: true})
 		}
 	}
 	
@@ -26,4 +38,4 @@ class PrivateRoute extends Component {
 	
 }
 
-export default PrivateRoute
+export default connect(mapStateToProps)(PrivateRoute)
