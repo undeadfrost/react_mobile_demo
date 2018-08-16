@@ -3,12 +3,15 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import {updateUser} from "../../redux/user/actions";
 
+// 获取redux中state
 const mapStateToProps = (state) => {
 	return {
 		userData: state.userData
 	}
 }
 
+
+// 获取redux中actions
 const mapDispatchToProps = (dispatch) => bindActionCreators({
 	updateUser
 }, dispatch)
