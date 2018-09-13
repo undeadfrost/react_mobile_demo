@@ -12,9 +12,9 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getClientEnvironment = require('./env');
 const paths = require('./paths');
 const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
-const postcssPxToViewport = require('postcss-px-to-viewport');
+const postcssPxToViewportOpt = require('postcss-px-to-viewport-opt');
 const postcssWriteSvg = require('postcss-write-svg');
-const postcssViewportUnits = require('postcss-viewport-units');
+// const postcssViewportUnits = require('postcss-viewport-units');
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // In development, we always serve from the root. This makes config easier.
@@ -222,7 +222,7 @@ module.exports = {
 											flexbox: 'no-2009',
 										}),
 										postcssAspectRatioMini({}),
-										postcssPxToViewport({
+										postcssPxToViewportOpt({
 											viewportWidth: 750, // (Number) The width of the viewport.
 											viewportHeight: 1334, // (Number) The height of the viewport.
 											unitPrecision: 3, // (Number) The decimal numbers to allow the REM units to grow to.
@@ -234,7 +234,7 @@ module.exports = {
 										postcssWriteSvg({
 											utf8: false
 										}),
-										postcssViewportUnits({}),
+										// postcssViewportUnits({}),
 									],
 								},
 							},
