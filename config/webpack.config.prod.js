@@ -13,7 +13,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 const postcssAspectRatioMini = require('postcss-aspect-ratio-mini');
-const postcssPxToViewport = require('postcss-px-to-viewport');
+const postcssPxToViewportOpt = require('postcss-px-to-viewport-opt');
 const postcssWriteSvg = require('postcss-write-svg');
 const postcssViewportUnits = require('postcss-viewport-units');
 
@@ -264,6 +264,7 @@ module.exports = {
 														selectorBlackList: ['.ignore', '.hairlines'], // (Array) The selectors to ignore and leave as px.
 														minPixelValue: 1, // (Number) Set the minimum pixel value to replace.
 														mediaQuery: false // (Boolean) Allow px to be converted in media queries.
+														exclude: /(\/|\\)(node_modules)(\/|\\)/
 													}),
 													postcssWriteSvg({
 														utf8: false
